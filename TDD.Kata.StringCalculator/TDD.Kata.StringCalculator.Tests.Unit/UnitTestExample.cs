@@ -1,27 +1,28 @@
 ﻿using Xunit;
+using TDD.Kata.StringCalculator;
 
 namespace TDD.Kata.StringCalculator.Tests.Unit
 {
     public class UnitTestExample
     {
-        //private Target Target;
+        private StringCalculator Target;
 
         public UnitTestExample()
         {
-            //this.Target = new StringCalculator();
+            this.Target = new StringCalculator();
         }
 
         [Fact]
-        public void Example()
+        public void WhenISendEmptyStringReturnZero()
         {
             //Arrange
-            //Your set up!.
+            string input = string.Empty;
 
             //Act
-            //Your principal action to test.
+            int output = this.Target.Add(input);
 
             //Assert
-            //Your expected value.
+            Assert.Equal(0, output);
         }
     }
 }
